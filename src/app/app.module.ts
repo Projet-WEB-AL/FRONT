@@ -27,6 +27,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ResearchBarComponent } from './research-bar/research-bar.component';
 import { EditAssocDialogComponent } from './edit-assoc-dialog/edit-assoc-dialog.component';
 import { MinutesListComponent } from './minutes-list/minutes-list.component';
+import { RabbitSenderComponent } from './rabbit-sender/rabbit-sender.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MinutesListComponent } from './minutes-list/minutes-list.component';
     ResearchBarComponent,
     EditAssocDialogComponent,
     MinutesListComponent,
+    RabbitSenderComponent,
 
   ],
   imports: [

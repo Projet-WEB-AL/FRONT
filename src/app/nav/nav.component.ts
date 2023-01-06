@@ -55,4 +55,10 @@ export class NavComponent {
 
   }
 
+
+  rabbit() : void{
+    this.route.navigateByUrl("/rabbit");
+  }
+
+
 }

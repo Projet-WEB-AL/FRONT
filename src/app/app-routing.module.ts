@@ -5,6 +5,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { AuthGuard } from './guards/auth.guard';
 import { PrivateSpaceComponent } from './private-space/private-space.component';
 import { AssociationsListComponent } from './associations-list/associations-list.component';
+import { RabbitSenderComponent } from './rabbit-sender/rabbit-sender.component';
 
 
 
@@ -18,6 +19,9 @@ const routes: Routes = [
   
   { path: 'MyPage', component: PrivateSpaceComponent,
   canActivate: [AuthGuard]},
+
+  {path:'rabbit',component:RabbitSenderComponent
+  ,canActivate: [AuthGuard]},
   
   {path:'Associations',component:AssociationsListComponent,
   canActivate: [AuthGuard]}

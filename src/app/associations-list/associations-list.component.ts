@@ -33,7 +33,6 @@ export class AssociationsListComponent implements OnInit,AfterViewInit{
   private router: Router,){}
 
 
-
   ngAfterViewInit(): void {
     this.getAssociationsByStartingName(" ");
 
