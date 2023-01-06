@@ -32,6 +32,7 @@ export class LoginComponent {
     const username: string = (document.getElementById('usernameLogin') as HTMLInputElement).value;
     const password: string = (document.getElementById('passwordLogin') as HTMLInputElement).value;
     if (username !== "" && password !== "") {
+      
     this.setGreen();
     
     this.api.post({endpoint: '/auth/login', data: { username:username , password } } ).then(
