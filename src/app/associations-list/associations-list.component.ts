@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { lastValueFrom, Observable } from 'rxjs';
@@ -15,7 +15,7 @@ import { User } from '../User.entity';
   styleUrls: ['./associations-list.component.scss']
 })
 
-export class AssociationsListComponent {
+export class AssociationsListComponent implements OnInit,AfterViewInit{
   
   dataSource :any [] = [] ;
   roles : any [][] = []; 
@@ -32,15 +32,30 @@ export class AssociationsListComponent {
   private tokenStorageService: TokenStorageService,
   private router: Router,){}
 
-  ngOnInit(): void {
+
+  ngAfterViewInit(): void {
     this.getAssociationsByStartingName(" ");
 
     //get the research bar and bind the function getAssociationsByStartingName to the input event
-    const inputbar = document.getElementById('inputbar') as HTMLInputElement;
-    inputbar.addEventListener('input', (event) => {
-    this.getAssociationsByStartingName(inputbar.value);
+    /*const inputbar = document.getElementById('inputbar') as HTMLInputElement;
+    inputbar.addEventListener('input', 
+
+    (event) => {
+      this.getAssociationsByStartingName(inputbar.value);
     }
     );
+    console.log(inputbar);*/
+  }
+
+  @HostListener('window:input' , ['$event.target'])
+  on(targetElement:HTMLInputElement) {
+    if(targetElement.id === "inputbar")
+     this.getAssociationsByStartingName( targetElement.value);
+  }
+
+  ngOnInit(): void {
+    this.getAssociationsByStartingName(" ");
+
 
     const resquest: Observable<any> = this.http.get('http://localhost:3000/users/private/current', { observe: 'response' });
     lastValueFrom(resquest).then((response: { body: any; }) => {this.currentUser = response.body});
@@ -93,7 +108,7 @@ export class AssociationsListComponent {
     );
   }
 
-  getAssociationsByStartingName(content: string){
+  getAssociationsByStartingName(content: string) {
     if (content == "" || content == null || content == undefined || content == " "){
       this.getAllAssociations();
       return;
@@ -101,6 +116,8 @@ export class AssociationsListComponent {
     const resquest: Observable<any> = this.http.get('http://localhost:3000/associations/'+content+'/startwith', { observe: 'response' });
     lastValueFrom(resquest).then(response => {this.dataSource = response.body;});
   }
+
+
 
   refresh(){
     const s: string = (document.getElementById('inputbar') as HTMLInputElement).value;

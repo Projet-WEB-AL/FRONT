@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Inject } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { lastValueFrom, Observable } from 'rxjs';
 import { ApiHelperService } from '../services/api-helper.service';
@@ -15,10 +15,14 @@ import { InfoUserDialogComponent } from '../info-user-dialog/info-user-dialog.co
   styleUrls: ['./users-list.component.scss']
 })
 
-export class UsersListComponent {
+export class UsersListComponent implements OnInit {
 
   dataSource :any [] = [] ;
+
 constructor(
+
+
+
   private dialog: MatDialog,
   private http : HttpClient,
   private api: ApiHelperService,
@@ -27,6 +31,15 @@ constructor(
 ) { }
 
   displayedColumns: string[] = ['id', 'lastname', 'firstname','username', 'age',"update","info",'delete'];
+
+
+
+  @HostListener('window:input' , ['$event.target'])
+  on(targetElement:HTMLInputElement) {
+    if(targetElement.id === "inputbar")
+     this.getUsersByStartingName( targetElement.value);
+  }
+
 
 
   openUpdatePupup(user:any) {
@@ -45,16 +58,15 @@ constructor(
   }
 
 
+  ngAfterViewInit(): void {
+    this.getAllusers();
+
+  }
+
   ngOnInit(): void {
     
     this.getAllusers();
-    const inputbar = document.getElementById('inputbar') as HTMLInputElement;
-    inputbar.addEventListener('input', (event) => {
-      this.getUsersByStartingName(inputbar.value);
-    }
-    );
-
-
+    
   }
 
   getAllusers(){
@@ -99,9 +111,11 @@ constructor(
             this.api.post({endpoint: '/users', data: {firstname,lastname,age,username,password}});
             window.location.reload();
           }
+
           else{
             this.setRed();
           }
+          
         }
       );
     }
@@ -132,15 +146,10 @@ constructor(
       );
   }
 
-
   refresh(){
     const s: string = (document.getElementById('inputbar') as HTMLInputElement).value;
     
     this.getUsersByStartingName(s);
 
   }
-
-
-
 }
-

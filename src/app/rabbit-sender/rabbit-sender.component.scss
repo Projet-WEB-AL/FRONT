@@ -1,0 +1,172 @@
+
+
+
+
+  .title{
+    
+  
+    font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 42px;
+    background-color: var(--navBarBG);
+    
+    background : linear-gradient(to right, rgb(68, 127, 136), rgb(120, 120, 128));
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+
+    width: 40%;
+    margin: 0 auto ;
+    margin-bottom: 40px;
+    margin-top : 20px;
+    animation : fade 2s ;
+    pointer-events: none;
+    
+
+
+    
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+    
+  }
+
+
+
+  .FormItem{
+    margin-left: 40px;
+
+
+    color: rgb(0, 0, 0);
+    
+    text-align: center;
+
+    border-radius: 10px;
+    margin : 0 auto;
+
+    
+}
+
+.tools{
+    margin: 0 auto;
+    margin-top : 20px;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.tool{
+    margin-left:10px;
+    margin-right:10px;
+    width: 100%;
+    text-align: center;
+}
+
+.usersTable p {
+
+}
+
+
+
+
+//table 
+
+
+
+th{
+
+    color: rgb(203, 198, 198);
+  
+}
+
+td{
+  color: rgb(203, 198, 198);
+  //resize: both;
+  
+  
+}
+
+
+
+
+
+.table{
+    
+    
+    font: 16px Helvetica, Arial, sans-serif;
+    //make the corners of the table more rounded
+    border-radius: 20px;
+
+    margin: 5%;
+    
+
+  color: rgb(203, 198, 198);
+    
+}
+
+table {
+
+
+  color: rgb(203, 198, 198);
+
+    border: 1px solid #393939;
+    box-shadow: #393939;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: 16px Helvetica, Arial, sans-serif;
+    //make the corners of the table more rounded
+    border-radius: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    background-color: var(--boxColors);
+    
+
+}
+
+
+
+
+  .sendButton:hover {
+    transform : scale(1.1);
+
+  }
+
+  .reactiveInput{
+    transition: transform 0.5s;
+  }
+  .reactiveInput:hover {
+    transform : scale(1.05);
+    transform : background-color(0.5s);
+  }
+
+
+  .page{
+    background-color: aliceblue;
+    margin : 0 auto;
+
+  }
+
+
+  .form{
+    margin : 0 auto;
+    margin-top : 20px;
+    width: 100%;
+    text-align: center;
+    
+  }
+
+  .sendButton{
+    border-radius: 5px;
+    background-color :rgb(68, 127, 136)
+
+  }
