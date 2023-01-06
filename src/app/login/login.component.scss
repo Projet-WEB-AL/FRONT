@@ -1,0 +1,258 @@
+
+
+
+.loginButton{
+    border-radius: 10px;
+    background-color: #52a0a9;
+    color: var(--navBarFontColor);
+
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    
+    cursor: pointer;
+    
+    color: rgba(114, 114, 114, 0.591);
+    
+    text-align: center;
+
+}
+
+
+//regrouppement des deux champs principaux dns une div
+.forms{
+    
+    background-color: #1a161e96;
+    border-radius: 20px;
+    padding: 20px 30px 20px 30px;
+
+    
+    max-width: 300px;
+
+    float : left;
+    margin : 2% 2% 2% 20%;
+    min-height: 900;
+    box-shadow: #274a4f9a 1px 1px 10px 1px;
+    
+}
+
+
+.projectExplanation{
+
+
+    background-color: #1a161e96;
+    border-radius: 15px;
+    
+    max-width: 300px;
+    min-height: auto;
+    float : right;
+    margin : 2% 20% 2% 2%;
+    box-shadow: #274a4f9a 1px 1px 10px 1px;
+    
+    
+    
+}
+
+.projectExplanation .title{
+    margin-top: 10px;
+    font-size: large;
+    font-weight: 500;
+    text-align: center;
+    color: #dddddd;
+}
+
+.projectExplanation .content{
+    margin : 15px 15px 20px 15px;
+    border-radius: 8px;
+    font-size: medium;
+    font-weight: 500;
+    text-align: center;
+    color: #dddddd;
+    background-color: #39727993;
+    box-shadow: #39727957 1px 1px 10px 1px;
+    padding : 20px;
+    
+}
+
+.projectExplanation .contentText{
+    margin-top : 10px;
+    
+}
+
+
+.projectExplanation .content .link{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    color: #dddddd;
+}
+
+.loginDiv{
+    
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    background-color: #4545456d;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 10px 0 rgba(45, 45, 45, 0.2);
+
+
+    margin-top: 20px;
+
+    margin-bottom: 20px;
+
+    max-width: 500px;
+
+    min-width: 100px;
+
+    min-height: 100px;
+
+    max-height: 300px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: rgba(0, 0, 0, 0.591);
+    font-size: 20px;
+
+    text-align: center;
+
+    
+}
+
+.loginTitle{
+
+    color: rgba(0, 0, 0, 0.591);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    
+    
+}
+
+
+
+
+.itemLogin{
+
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    margin-right:10px;
+
+    text-align: center;
+
+}
+
+
+.haveAccount{
+    
+    color: rgba(255, 255, 255, 0.807);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 42px;
+}
+
+
+.register{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.807);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 42px;
+    
+    border-radius: 10px;
+    background-color:var(--NavBarBG);
+    padding: 1% 1% 1% 1%;
+}
+
+//background
+img.background {
+    position: fixed;
+    size-adjust: 1000%;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(5px);
+}
+//dans l'html
+//<img class="background" src="/assets/images/background2.webp" alt="Aleq">
+
+
+//jolies textboxes
+input[type=text]  {
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }
+
+  //truc du mot de passe
+input{
+    --webkit-text-security: none;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    
+
+}
+
+.logo {
+
+    height: auto;
+  
+    max-width: 50%;
+  
+  }
+
+
+  .transition{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background: #222222;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition : ease-in 0.1s;
+  }
+  .transition.active{
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  #background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+
+
+

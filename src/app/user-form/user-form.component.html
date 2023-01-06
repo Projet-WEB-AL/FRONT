@@ -1,0 +1,34 @@
+
+<div class = "userForm">
+
+    <a >
+        <mat-icon>person_add</mat-icon>
+      </a>
+    <form>
+        
+        <label for="firstname" class = userFormItem>Prénom</label>
+
+        <div><input type="text" id="firstname" placeholder ="firstname" class="userFormItemR"/></div>
+        
+
+        <label for="lastname" class = userFormItem>Nom</label>
+        <div><input type="text" id="lastname" placeholder="lastname" class = "userFormItemR"/></div>
+    
+    
+        <label for="age" class = userFormItem >Age</label>
+        <div><input type="text" id="age" placeholder="age" class = userFormItemR/></div>
+    
+
+        <label for="username" class = userFormItem id = "usernameLbl">Pseudonyme</label>
+        <div><input type="text" id="username" placeholder="username" class = userFormItemR/></div>
+        
+    
+        <label for="password" class = userFormItem>Mot de passe</label>
+        <div><input type="text" id="passwordRegister" placeholder="password" class = userFormItemR/></div>
+    
+        
+        <br/>
+        <a (click)="register()" class = " buttons registerButton"> Enregistrer</a>
+    </form>
+
+</div>

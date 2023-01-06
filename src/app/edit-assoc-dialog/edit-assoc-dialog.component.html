@@ -1,0 +1,71 @@
+
+<mat-dialog-content>
+
+  <div class = format>
+<div class = "Form">
+
+    <a>
+        <mat-icon>people</mat-icon>
+    </a>
+
+
+    <div><a>edit association</a></div>
+    <div>
+      <form>
+          <label  class = userFormItem>association name </label>
+          <div><input type="text" id="Name" placeholder ="Name" class="name"/></div>
+      </form>
+  
+      <form>
+        <label  class = userFormItem>Description </label>
+        <div><input type="text" id="description" placeholder ="description" class="name"/></div>
+      </form>
+
+      <form>
+        <label  class = userFormItem>Adresse </label>
+        <div><input type="text" id="address" placeholder =" 3 rue ..." class="name"/></div>
+      </form>
+  
+      <form>
+        <label  class = userFormItem>phone number </label>
+        <div><input type="text" id="phone" placeholder ="+33 ..." class="name"/></div>
+      </form>
+  
+      <form>
+        <label  class = userFormItem>email adress</label>
+        <div><input type="text" id="email" placeholder ="https://..." class="name"/></div>
+      </form>
+  
+      <form>
+        <label  class = userFormItem>webSite</label>
+        <div><input type="text" id="webSite" placeholder ="association@..." class="name"/></div>
+      </form>
+    </div>
+
+        <p>Now, let's add some users</p>
+        <mat-chip-grid #chipGrid aria-label="Enter Usernames">
+          <mat-chip-row *ngFor="let member of assosMembers"
+                        (removed)="remove(member)"
+                        [editable]="true"
+                        (edited)="edit(member, $event)">
+            {{member.id}}
+            <button matChipRemove [attr.aria-label]="'remove ' + member">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+          <input placeholder="New user..."
+                 [matChipInputFor]="chipGrid"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)"/>
+        </mat-chip-grid>
+
+
+</div>
+
+
+<a (click) ="onCancelClick()" > <mat-icon> cancel </mat-icon> </a>
+<a (click)="onfinishClick()" mat-button  [mat-dialog-close]="{name:assosName,description:description, address : address , phone : phone,email :email,webSite : webSite ,users:assosMembers}" cdkFocusInitial class = "finishButton"> <mat-icon> done </mat-icon></a>
+
+</div>
+</mat-dialog-content>

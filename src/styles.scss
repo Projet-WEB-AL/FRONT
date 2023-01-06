@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+body,html {
+  size: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+  
+
+:root {
+    --NavBarBG:#1f1d2a;
+    --PageBackgroundColor :rgba(52,53,65);
+    --itemsColor: #454545;
+    --navBarFontColor: #ffffff;
+    --boxColors : #26252f;
+    --DialogBG : #323142;
+
+    background-color: var(--PageBackgroundColor) ;
+  }
+  
+  mat-dialog-container {
+    background-color: transparent !important;
+    padding: 0px 0px 0px 0px !important;
+    overflow: hidden !important;
+  }
+
+  .reactiveInput{
+    transition: transform 0.5s;
+  }
+  .reactiveInput:hover {
+    transform : scale(1.1);
+    transform : background-color(0.5s);
+  }
+
+
+  .delbutton:hover{
+
+    color: #663232;
+    cursor: pointer;
+  }
+
+
+  .accept:hover{
+
+    color: #326632;
+    cursor: pointer;
+  }

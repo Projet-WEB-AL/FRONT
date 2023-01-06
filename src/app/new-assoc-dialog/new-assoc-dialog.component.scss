@@ -1,0 +1,35 @@
+.example-chip-list {
+    width: 100%;
+  }
+  ::ng-deep .mat-dialog {
+    width: 700px;
+    height: 400px;
+   
+      background-color: greenyellow 
+   
+    
+
+    
+  }
+
+  .mat-dialog-content {
+    background-color: #ff0000;
+  }
+
+.Form{
+  
+  margin : 100px 100px 100px 100px;
+  size: 100%;
+}
+
+.format{
+  color :#fefefe;
+  
+}
+
+mat-dialog-content{
+
+  background-color: var(--DialogBG);
+
+
+}

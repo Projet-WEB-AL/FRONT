@@ -1,0 +1,111 @@
+
+<app-nav></app-nav>
+
+<p class = "title" > Liste des utilisateurs</p>
+
+<app-research-bar></app-research-bar>
+
+<div class = table>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastname">
+        <th mat-header-cell *matHeaderCellDef> Nom </th>
+        <td mat-cell *matCellDef="let user"> {{user.lastname}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="firstname">
+        <th mat-header-cell *matHeaderCellDef> Prénom </th>
+        <td mat-cell *matCellDef="let user"> {{user.firstname}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="username" >
+        <th mat-header-cell *matHeaderCellDef> Pseudonyme </th>
+        <td mat-cell *matCellDef="let user" > {{user.username}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Age </th>
+        <td mat-cell *matCellDef="let user"> {{user.age}} </td>
+      </ng-container>
+
+      <div class = buttons>
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Supprimer </th>
+        <td mat-cell *matCellDef="let user"> <a (click) ="delete(user)" > <mat-icon class = "buttons delbutton">delete</mat-icon></a> 
+      </td>
+      </ng-container>
+
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Mettre à jour </th>
+        <td mat-cell *matCellDef="let user"> <a (click) ="update(user)" > <mat-icon class = buttons>edit</mat-icon></a>
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="info">
+        <th mat-header-cell *matHeaderCellDef> info </th>
+        <td mat-cell *matCellDef="let user"> <a (click) ="info(user)" > <mat-icon class = buttons >list</mat-icon></a>
+        </td>
+      </ng-container>
+
+    </div>
+
+      <!-- footer -->
+
+      <ng-container matColumnDef="explain">
+        <td mat-footer-cell *matHeaderCellDef colspan="8">
+          <a class = addUserLbl>Ajouter un utilisateur</a>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="adder">
+        <td mat-footer-cell *matHeaderCellDef colspan="3">
+          <a (click) = "register()" class = adduserButton > <mat-icon class = buttons>save</mat-icon></a>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="inputFirstName">
+        <td mat-footer-cell *matHeaderCellDef colspan="1">
+          <input type="text" id="lastname" placeholder="lastname" class = "userFormItemR reactiveInput"/>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="inputLastName">
+        <td mat-footer-cell *matHeaderCellDef colspan="1">
+          <input type="text" id="firstname" placeholder="firstname" class = "userFormItemR reactiveInput"/>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="inputUsername">
+        <td mat-footer-cell *matHeaderCellDef colspan="1">
+          <input type="text" id="username" placeholder="username" class = "userFormItemR reactiveInput"/>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="inputAge">
+        <td mat-footer-cell *matHeaderCellDef colspan="1">
+          <input type="text" id="age" placeholder="age" class = "userFormItemR reactiveInput"/>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="inputPassword">
+        <td mat-footer-cell *matHeaderCellDef colspan="1">
+          <input type="text" id="passwordRegister" placeholder="password" class = "userFormItemR reactiveInput"/>
+        </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="['explain']" class="Footer "></tr>
+
+      <tr mat-header-row *matHeaderRowDef="['inputUsername','inputFirstName','inputLastName','inputAge','inputPassword','adder']" class="Footer"></tr>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class = reactiveRow></tr>
+
+
+  </table>
+</div>

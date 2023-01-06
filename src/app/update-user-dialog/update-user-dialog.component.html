@@ -1,0 +1,32 @@
+<mat-dialog-content>
+    <div class = format>
+<div class = "userForm">
+
+    <a>
+        <mat-icon>person_add</mat-icon>
+    </a>
+
+    <form>
+    
+        <label for="firstname" class = userFormItem>Firstname</label>
+
+        <div><input type="text" id="firstnameP" placeholder ="firstname" class="userFormItemR"/></div>
+        
+        <label for="lastname" class = userFormItem>LastName</label>
+        <div><input type="text" id="lastnameP" placeholder="lastname" class = "userFormItemR"/></div>
+    
+        <label for="username" class = userFormItem>Username</label>
+        <div><input type="text" id="usernameP" placeholder="username" class = "userFormItemR"/></div>
+    
+        <label for="age" class = userFormItem >Age</label>
+        <div><input type="text" id="ageP" placeholder="age" class = userFormItemR/></div>
+    
+        <br/>
+        <a (click)="onUpdateClick()" mat-button  [mat-dialog-close]="{lastname:data.lastname,firstname:data.firstname,age:data.age}" cdkFocusInitial class = "registerButton reactiveInput"> Update</a>
+        
+    </form>
+
+</div>
+    </div>
+
+</mat-dialog-content>

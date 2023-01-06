@@ -1,0 +1,180 @@
+
+
+th{
+
+    color: rgb(203, 198, 198);
+  
+}
+
+td{
+  color: rgb(203, 198, 198);
+  //resize: both;
+  
+  
+}
+
+
+
+
+
+.table{
+    
+    
+    border: 1px solid #393939;
+    font: 16px Helvetica, Arial, sans-serif;
+    //make the corners of the table more rounded
+    border-radius: 20px;
+
+    margin: 5%;
+    
+
+  color: rgb(203, 198, 198);
+    
+}
+
+table {
+
+
+  color: rgb(203, 198, 198);
+
+    border: 1px solid #393939;
+    box-shadow: #393939;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: 16px Helvetica, Arial, sans-serif;
+    //make the corners of the table more rounded
+    border-radius: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    background-color: var(--boxColors);
+    
+
+}
+
+.mat-header-raw {
+  background-color: var(--boxColors);
+    color: white;
+  }
+
+  .mat-header-cell:not(:first-child) {
+    padding-left: 0;
+  }
+
+  .state-cell {
+    text-align: right;
+  }
+  .mat-cell {
+    border: none;
+
+  color: rgb(203, 198, 198);
+    
+  }
+  
+
+
+  .registerUser{
+    
+
+    color: rgb(203, 198, 198);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    background-color: #393939;
+    
+    
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: auto;
+
+  }
+
+
+  .title{
+    font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 42px;
+    background-color: var(--navBarBG);
+    background : linear-gradient(to right, rgb(68, 127, 136), rgb(120, 120, 128));
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto ;
+    margin-bottom: 40px;
+    margin-top : 20px;
+    animation : fade 2s ;
+    pointer-events: none;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+    
+  }
+
+  .registerUserdiv{
+    margin: 0 auto;
+    
+    width: 100%;
+    
+  }
+  .adduserButton{
+    text-align: center;
+    
+    
+  }
+
+
+  .userFormItemR{
+    margin-left: 40px;
+
+
+    color: rgb(203, 198, 198);    
+    text-align: center;
+
+    border-radius: 10px;
+    
+}
+
+.addUserLbl{
+  
+  margin : 0 auto;
+  font-size: large;
+  
+    
+  color: rgb(203, 198, 198);
+    
+    border-radius: 10px;
+}
+
+.buttons:hover {
+  transform : scale(1.1);
+  transform : background-color(0.5s);
+}
+
+.reactiveInput{
+  transition: transform 0.5s;
+}
+.reactiveInput:hover {
+  transform : scale(1.05);
+  transform : background-color(0.5s);
+}
+
+.reactiveRow{
+  transition: transform 0.1s;
+}
+
+.reactiveRow:hover {
+  transform : scale(1.01);
+  transform : background-color(0.5s);
+}
+
+

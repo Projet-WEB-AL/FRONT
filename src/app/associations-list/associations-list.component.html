@@ -1,0 +1,105 @@
+
+<app-nav></app-nav>
+
+<p class = "title" > Liste des associations</p>
+
+<app-research-bar></app-research-bar>
+
+
+
+<div class = headerHutton>
+    <mat-card class = "addAsso reactiveInput" (click) = "createAssociation()">
+        <mat-card-header>
+            <mat-card-title>
+                <mat-icon >add</mat-icon>
+                <h3> Créer ton association !  </h3>
+            </mat-card-title>
+        </mat-card-header>
+    </mat-card>
+    </div>
+<div class = table>
+
+
+<mat-accordion *ngFor="let association of dataSource" >
+
+    <mat-expansion-panel class = "panel reactiveRow"  >
+        <mat-expansion-panel-header>
+        
+            <mat-panel-title>
+                
+                <h3>{{association.name}}</h3>
+            </mat-panel-title>
+            
+            <mat-panel-description>
+                <p> Description : {{association.description}}</p>
+            </mat-panel-description>
+
+
+
+            
+        </mat-expansion-panel-header>
+
+        
+            
+            <p> Address : {{association.address}}</p>
+            <p> Phone : {{association.phone}}</p>
+            <p> Email : {{association.email}}</p>
+            <p> Website : {{association.webSite}}</p>
+
+            <div class = "joinDiv buttons" [style.display]="isJoined(association) ? 'none' : 'block'" >
+                <a (click) = "join(association)"> Rejoindre  </a>
+             </div>
+
+             <div class = "leaveDiv buttons" [style.display]="isJoined(association) ? 'block' : 'none'">
+                <a (click) = "leave(association)"> Quitter </a>
+             </div>
+
+
+            <div class = usersTable >
+            <p class = TitleMembre> Membres de {{association.name}} </p>
+            <table mat-table [dataSource]= "association.users "  class="mat-elevation-z8" >
+
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> id </th>
+                  <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+                </ng-container>
+          
+                <ng-container matColumnDef="lastname">
+                  <th mat-header-cell *matHeaderCellDef> Lastname </th>
+                  <td mat-cell *matCellDef="let user"> {{user.lastname}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="firstname">
+                  <th mat-header-cell *matHeaderCellDef> Firstname </th>
+                  <td mat-cell *matCellDef="let user"> {{user.firstname}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="username">
+                  <th mat-header-cell *matHeaderCellDef> Username </th>
+                  <td mat-cell *matCellDef="let user"> {{user.username}} </td>
+                </ng-container>
+
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          
+          
+            </table>
+
+
+        </div>
+
+        
+        <div class = "tools buttons">
+            <a (click) = "update(association)" class ="tool"> <mat-icon class = buttons> edit </mat-icon></a>
+            <a (click) = "delete(association)" class ="tool"> <mat-icon class = "buttons delbutton" > delete </mat-icon></a>
+            <a (click) = "goToAssociation(association)" class ="tool"> <mat-icon class = buttons> list </mat-icon></a>
+        </div>
+
+    </mat-expansion-panel>
+
+    
+
+</mat-accordion>
+
+</div>

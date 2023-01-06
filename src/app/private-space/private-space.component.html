@@ -1,0 +1,72 @@
+
+<app-nav></app-nav>
+<p class = "title" > Votre espace</p>
+
+
+<div class = whellcom>
+    <div class = Title>
+        <div><a class = icon><mat-icon>lock </mat-icon></a> </div>
+        
+    </div>
+    <div class = content>
+
+        <div>
+            <a> De retour parmis nous, {{ currentUser.username }} !</a>
+        </div>
+        
+        <a> Vous etes ici sur votre page perosnnelle </a>
+    </div>
+</div>
+
+<div class = page>
+    <div class = assosIn>
+
+        <div class = Title> <a class = icon> <mat-icon>people</mat-icon> </a> </div>
+
+
+        <a class = assoInTitle >Vos associations </a>
+
+        <table mat-table [dataSource]="assosJoined" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="name">
+                <td mat-cell *matCellDef="let asso"> {{asso.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef=" ">
+                
+                <td mat-cell *matCellDef="let asso"> 
+                    <div class = "leaveDiv buttons ">
+                        <a (click) = "leave(asso)"> Quitter</a>
+                   </div>
+                </td>
+            
+            </ng-container>        
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class = reactiveRow></tr>
+
+        </table>
+
+
+
+    </div>
+
+    <div class = userInfo>
+
+        <div class = Title>
+            <a class = icon> <mat-icon>info</mat-icon></a>
+            <a (click) = "openUpdatePupup()" class = icon> <mat-icon class = reactiveInput> edit</mat-icon>   </a>
+        </div>
+
+
+        <div class = contentList>
+            Vos informations personelles
+            <li>Pseudonyme : {{currentUser.username}}</li>
+            <li>Prénom : {{currentUser.firstname}}</li>
+            <li>Nom : {{currentUser.lastname}}</li>
+            <li>Age : {{currentUser.age}}</li>
+
+    </div>
+
+
+    </div>
+
+</div>

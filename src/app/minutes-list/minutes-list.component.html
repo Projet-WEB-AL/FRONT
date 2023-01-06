@@ -1,0 +1,40 @@
+
+
+<app-nav></app-nav>
+
+<p class = "title" > Association List</p>
+
+<app-research-bar></app-research-bar>
+
+<div class = table>
+<mat-accordion *ngFor="let association of dataSource" >
+
+    <mat-expansion-panel class = panel  >
+        <mat-expansion-panel-header>
+        
+            <mat-panel-title>
+                
+                <h3>{{association.name}}</h3>
+            </mat-panel-title>
+            
+            <mat-panel-description>
+                <p> Description : {{association.description}}</p>
+            </mat-panel-description>
+
+            
+        </mat-expansion-panel-header>
+        
+            
+            <p> Address : {{association.address}}</p>
+            <p> Phone : {{association.phone}}</p>
+            <p> Email : {{association.email}}</p>
+            <p> Website : {{association.webSite}}</p>
+
+
+    </mat-expansion-panel>
+
+    
+
+</mat-accordion>
+
+</div>

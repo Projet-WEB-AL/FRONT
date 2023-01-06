@@ -1,0 +1,91 @@
+<video id="background-video" autoplay loop muted>
+  <source src="assets/images/backgroundVideo2.mp4" type="video/mp4" class = background-element>
+</video>
+
+<section class ="subdivCenter">
+  
+  <div class = "forms">
+
+    <p class = "register"> Un habitué, connecte toi ! </p>
+    <div class = "loginDiv left">
+      
+      <div class = "login">
+        
+        <h3 class = "loginTitle"> <mat-icon>login</mat-icon> </h3>
+
+        <form>
+        
+
+          <label for="username" class = "UsernameLabel itemLogin">Pseudonyme</label>
+          <input type="text" id="usernameLogin" placeholder="username" class = "LoginForms "/>
+        
+        
+
+
+          <label for="password" class = "passwordLabel itemLogin">Mot passe</label>
+          <input type="password" id="passwordLogin" placeholder="password" class = "LoginForms "/>
+
+          <div  class = " buttons loginButton itemLogin  " > <a (click)="login()" > login </a> </div>
+        </form>
+
+        
+      
+      </div>
+    </div>
+
+    <div class = registerDiv >
+      <p class = "register"> Nouveau ici, Enregistre toi !</p>
+      <div class = "userForm">
+        <app-user-form > </app-user-form>
+      </div>
+    </div>
+  </div>
+
+  <div class = "projectExplanation right ">  
+
+    <div class = title>
+
+      <a> <mat-icon>help_outline</mat-icon></a>
+      <div>Quel est ce site web ?</div>
+
+    </div>
+
+    <div class = content>
+
+      <div class = contentText>
+        <p class = "text"> Ce site web est un projet de Tp dans le cadre de mon école d'ingenieur. </p>
+        <p class = "text">  il n'existe que à titre de projet d'entrainement et de découverte. </p>
+        <p class = "text"> Il est relié à un backend créer aussi dans le meme but. </p>
+        
+        <p class = "text"> Construit à base de Nest.js et de Angular,ce projet se base sur le sujet suivant </p>
+        
+        <p class = "text"> <a class = link href = "https://stephaniechallita.github.io/web/"> Sujet du TP</a> </p>
+
+
+        <div>
+          <a href = "https://esir.univ-rennes.fr/fr">
+            <img class ="logo" src="/assets/images/esir.png" ></a>
+        </div>
+        
+        <div >
+          <a href = "https://www.univ-rennes1.fr/" > <img class ="logo" src="/assets/images/rennes1.png" > </a>
+
+        </div>
+    
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+

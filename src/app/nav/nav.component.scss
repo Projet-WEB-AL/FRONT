@@ -1,0 +1,101 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: var(--NavBarBG);
+    overflow: hidden;
+    
+    max-height: fit-content;
+
+  }
+
+
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: rgb(177, 175, 175);
+    color: rgb(83, 83, 83);
+  }
+
+  .buttons{
+    float: center;
+    size: 100%;
+  }
+
+    .button {
+        
+      //background: linear-gradient(to bottom, rgb(68, 127, 136), rgb(120, 120, 128));
+        
+        color: var(--navBarFontColor);
+        
+        text-align: center;
+        font-size: 16px;
+        
+        cursor: pointer;
+        
+        
+        height: 22px;
+        width: 50px;
+
+        transition: transform 0.5s;
+        
+        
+    }
+
+    .button:hover {
+      transform: rotate(5deg);
+      transform : scale(1.2);
+      transform : background-color(0.5s);
+    }
+
+
+    .titlenav{
+        color: rgba(255, 255, 255, 0.591);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 42px;
+        margin : 0 0 auto 0 ;
+        
+        float: left;
+    }
+
+    .logo{
+      min-width: auto;
+      float: left;
+      
+      height: 50px;
+      
+    
+    }
+    
+    .logoDiv{
+      max-width: 20%;
+      min-width: 20%;
+      float: left;
+      //background : linear-gradient(to right, rgb(68, 127, 136), var(--NavBarBG));
+      
+      pointer-events : none;
+    }
+
+    .connected{
+      float: right;
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 42px;
+
+      margin : auto;
+
+      margin-right : 20px;
+      margin-left : 20px;
+      text-align: center;
+      pointer-events : none;
+    }
