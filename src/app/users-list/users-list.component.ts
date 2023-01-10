@@ -70,7 +70,7 @@ constructor(
   }
 
   getAllusers(){
-    const resquest: Observable<any> = this.http.get('http://localhost:3000/users', { observe: 'response' });
+    const resquest: Observable<any> = this.http.get('http://localhost/api/users', { observe: 'response' });
     lastValueFrom(resquest).then(response => this.dataSource = response.body); 
 
 
@@ -138,7 +138,7 @@ constructor(
       return;
     }
     content = content.toString();
-    const resquest: Observable<any> = this.http.get('http://localhost:3000/users/'+content+'/startwith', { observe: 'response' });
+    const resquest: Observable<any> = this.http.get('http://localhost/api/users/'+content+'/startwith', { observe: 'response' });
     lastValueFrom(resquest).then(response => {
       this.dataSource = response.body
       console.log(response.body);

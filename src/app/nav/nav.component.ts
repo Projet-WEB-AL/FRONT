@@ -31,7 +31,7 @@ export class NavComponent {
   ) {}
 
   ngOnInit(): void {
-    const resquest: Observable<any> = this.http.get('http://localhost:3000/users/private/current', { observe: 'response' });
+    const resquest: Observable<any> = this.http.get('http://localhost/api/users/private/current', { observe: 'response' });
     lastValueFrom(resquest).then((response: { body: any; }) => {this.currentUser = response.body});
   }
 
