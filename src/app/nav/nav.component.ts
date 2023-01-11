@@ -2,9 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { lastValueFrom, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { ApiHelperService } from '../services/api-helper.service';
 import { TokenStorageService } from '../services/token-storage.service';
 import { User } from '../User.entity';
+
 
 @Component({
   selector: 'app-nav',
@@ -12,13 +14,11 @@ import { User } from '../User.entity';
   styleUrls: ['./nav.component.scss']
 })
 
-export class NavComponent {
 
+export class NavComponent {
 
   currentUser: User = new User() ;
   
-  
-
   constructor(
     private service: TokenStorageService,
     private route: Router,
@@ -31,7 +31,7 @@ export class NavComponent {
   ) {}
 
   ngOnInit(): void {
-    const resquest: Observable<any> = this.http.get('http://localhost/api/users/private/current', { observe: 'response' });
+    const resquest: Observable<any> = this.http.get(environment.API_URL+'/users/private/current', { observe: 'response' });
     lastValueFrom(resquest).then((response: { body: any; }) => {this.currentUser = response.body});
   }
 

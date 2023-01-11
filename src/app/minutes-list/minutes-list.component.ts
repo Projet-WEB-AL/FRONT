@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { lastValueFrom, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { ApiHelperService } from '../services/api-helper.service';
 import { TokenStorageService } from '../services/token-storage.service';
 
@@ -46,7 +47,7 @@ export class MinutesListComponent {
 
 
   getAllMinutes(){
-    const resquest: Observable<any> = this.http.get('http://localhost:3000/associations/'+this.id, { observe: 'response' });
+    const resquest: Observable<any> = this.http.get(environment.API_URL+'/associations/'+this.id, { observe: 'response' });
     
     lastValueFrom(resquest).then(response => {
       this.dataSource = response.body.minutes;

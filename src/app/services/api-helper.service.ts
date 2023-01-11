@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
+
 import { environment } from 'src/environments/environment';
+
 import { Observable, lastValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-const base_url: string = 'http://localhost/api';
+
+
+const base_url: string =  environment.API_URL;
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class ApiHelperService {
   constructor(private http: HttpClient) { }
 
