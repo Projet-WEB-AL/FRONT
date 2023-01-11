@@ -8,6 +8,7 @@ import { UserDeleteComponent } from '../user-delete/user-delete.component';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogConfig} from '@angular/material/dialog';
 import { UpdateUserDialogComponent } from '../update-user-dialog/update-user-dialog.component';
 import { InfoUserDialogComponent } from '../info-user-dialog/info-user-dialog.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-users-list',
@@ -70,7 +71,7 @@ constructor(
   }
 
   getAllusers(){
-    const resquest: Observable<any> = this.http.get('http://localhost/api/users', { observe: 'response' });
+    const resquest: Observable<any> = this.http.get(environment.API_URL+'/users', { observe: 'response' });
     lastValueFrom(resquest).then(response => this.dataSource = response.body); 
 
 
@@ -138,7 +139,7 @@ constructor(
       return;
     }
     content = content.toString();
-    const resquest: Observable<any> = this.http.get('http://localhost/api/users/'+content+'/startwith', { observe: 'response' });
+    const resquest: Observable<any> = this.http.get(environment.API_URL+'/users/'+content+'/startwith', { observe: 'response' });
     lastValueFrom(resquest).then(response => {
       this.dataSource = response.body
       console.log(response.body);

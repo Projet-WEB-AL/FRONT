@@ -3,6 +3,7 @@ import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { lastValueFrom, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { EditAssocDialogComponent } from '../edit-assoc-dialog/edit-assoc-dialog.component';
 import { NewAssocDialogComponent } from '../new-assoc-dialog/new-assoc-dialog.component';
 import { ApiHelperService } from '../services/api-helper.service';
@@ -57,7 +58,7 @@ export class AssociationsListComponent implements OnInit,AfterViewInit{
     this.getAssociationsByStartingName(" ");
 
 
-    const resquest: Observable<any> = this.http.get('http://localhost/api/users/private/current', { observe: 'response' });
+    const resquest: Observable<any> = this.http.get(environment.API_URL+'/users/private/current', { observe: 'response' });
     lastValueFrom(resquest).then((response: { body: any; }) => {this.currentUser = response.body});
   }
 
@@ -98,7 +99,7 @@ export class AssociationsListComponent implements OnInit,AfterViewInit{
   }
 
   getAllAssociations(){
-    const resquest: Observable<any> = this.http.get('http://localhost/api/associations', { observe: 'response' });
+    const resquest: Observable<any> = this.http.get(environment.API_URL+'/associations', { observe: 'response' });
     
     lastValueFrom(resquest).then(response => {
       this.dataSource = response.body;
@@ -113,7 +114,7 @@ export class AssociationsListComponent implements OnInit,AfterViewInit{
       this.getAllAssociations();
       return;
     }
-    const resquest: Observable<any> = this.http.get('http://localhost/api/associations/'+content+'/startwith', { observe: 'response' });
+    const resquest: Observable<any> = this.http.get(environment.API_URL+'/associations/'+content+'/startwith', { observe: 'response' });
     lastValueFrom(resquest).then(response => {this.dataSource = response.body;});
   }
 

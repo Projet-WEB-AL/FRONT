@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
+import { environment } from 'src/environments/environment';
 import { LoginComponent } from '../login/login.component';
 import { ApiHelperService } from '../services/api-helper.service';
 import { TokenStorageService } from '../services/token-storage.service';
@@ -36,12 +37,12 @@ constructor(
 
   ngOnInit(): void {
     
-    const resquest: Observable<any> = this.http.get('http://localhost/api/users/private/current', { observe: 'response' });
+    const resquest: Observable<any> = this.http.get(environment.API_URL+'/users/private/current', { observe: 'response' });
     lastValueFrom(resquest).then(response => {
       
       this.currentUser = response.body;
     
-      const resquest2: Observable<any> = this.http.get('http://localhost/api/associations/'+this.currentUser.username+'/isMember', { observe: 'response' });
+      const resquest2: Observable<any> = this.http.get(environment.API_URL+'/associations/'+this.currentUser.username+'/isMember', { observe: 'response' });
       lastValueFrom(resquest2).then(response => {this.assosJoined = response.body});
     
     
@@ -60,7 +61,7 @@ constructor(
     const dialogRef = this.dialog.open(UpdateUserDialogComponent, {data: {firstname: this.currentUser.firstname, lastname:this.currentUser.lastname,username:this.currentUser.username,age : this.currentUser.age}});        
     dialogRef.afterClosed().subscribe(result => {
       //this.api.put({endpoint: '/users/'+this.currentUser.id ,data: {firstname: result.firstname, lastname:result.lastname ,age : result.age,username:result.username,password: this.currentUser.password}});
-      this.http.put('http://localhost/api/users/'+this.currentUser.id, {firstname: result.firstname, lastname:result.lastname ,age : result.age,username:result.username,password: this.currentUser.password}).subscribe((response) => {window.location.reload()}
+      this.http.put(environment.API_URL+'/users/'+this.currentUser.id, {firstname: result.firstname, lastname:result.lastname ,age : result.age,username:result.username,password: this.currentUser.password}).subscribe((response) => {window.location.reload()}
       );
     });
   }

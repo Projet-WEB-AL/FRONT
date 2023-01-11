@@ -6,6 +6,7 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import { lastValueFrom, Observable } from 'rxjs';
 import { User } from '../User.entity';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 export interface Member {
@@ -49,7 +50,7 @@ export class NewAssocDialogComponent {
 
   
       ngOnInit(): void {
-        const resquest: Observable<any> = this.http.get('http://localhost/api/users/private/current', { observe: 'response' });
+        const resquest: Observable<any> = this.http.get(environment.API_URL+'/users/private/current', { observe: 'response' });
         lastValueFrom(resquest).then((response: { body: any; }) => {
           
           this.currentUser = response.body;
